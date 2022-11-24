@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="app.component.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+        <form action="https://www.google.com/">
+          <h1>Login Page</h1>
+          <label class="lab">Username</label>
+          <input type="text" placeholder="username" class="inpbutton" (click)="erase()" [(ngModel)]="username" [ngModelOptions]="{standalone:true}">
+          <!-- the above line or this line can be used otherwise error occurs -->
+          <!-- inside form tag we want to use either " name="" " or " [ngModelOptions]="{standalone:true}" " if we want to use ngModel inside form tag -->
+          <!-- <input type="text" placeholder="username" class="inpbutton" (click)="erase()" [(ngModel)]="username" name="marvel"> -->
+          <label class="outbox">Password</label>
+          <input type="password" placeholder="password" class="passbutton" (click)="erase()" [(ngModel)]="pass" [ngModelOptions]="{standalone:true}">
+          <!-- the above line or this line can be used otherwise error occurs -->
+          <!-- inside form tag we want to use either " name="" " or " [ngModelOptions]="{standalone:true}" " if we want to use ngModel inside form tag -->
+          <!-- <input type="text" placeholder="password" class="passbutton" (click)="erase()" [(ngModel)]="pass" name="DC"> -->
+          <input type="submit" class="subbutton">
+          <span class="outputbox" [ngStyle]="{color: colordecider == true ?'green':'red' }">{{output}}</span>
+        </form> 
+    </div>
+  </body>
+</html>
